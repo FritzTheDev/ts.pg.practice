@@ -23,6 +23,7 @@
     "typescript": "^3.7.5"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "pg": "^7.17.1",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.2.22"
