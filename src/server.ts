@@ -1,20 +1,16 @@
 import 'dotenv/config';
 import 'reflect-metadata';
-import { createConnection } from "typeorm";
+import { createConnection } from 'typeorm';
 
-import config from "./ormconfig";
+import config from './ormconfig';
 
 (async () => {
   try {
     await createConnection(config);
   } catch (error) {
-    console.log("Error Connecting To The Database");
+    console.log('Error Connecting To The Database');
     return error;
   }
-  const app = new App(
-    [
-      new PostController(),
-    ]
-  );
+  const app = new App([new PostController()]);
   app.listen();
 })();
