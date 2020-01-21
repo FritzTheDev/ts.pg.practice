@@ -5,6 +5,9 @@ import { createConnection } from 'typeorm';
 import App from './app';
 import config from './ormconfig';
 import { PostController } from './post/post.controller';
+import validateenv from './utils/validateenv';
+
+validateenv();
 
 (async () => {
   try {
