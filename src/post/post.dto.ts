@@ -1,6 +1,6 @@
 import { IsString } from 'class-validator';
 
-export default class PostDto {
+export class PostDto {
   @IsString()
   public content: string;
 
