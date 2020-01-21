@@ -1,6 +1,6 @@
 import { IsString } from 'class-validator';
 
-export class PostDto {
+export class CreatePostDto {
   @IsString()
   public content: string;
 
