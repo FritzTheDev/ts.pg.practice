@@ -1,7 +1,7 @@
 import * as express from 'express';
 import { getRepository } from 'typeorm';
 import { PostNotFoundException } from '../exceptions/PostNotFoundException';
-import Controller from '../interfaces/controller.interface';
+import { Controller } from '../interfaces/controller.interface';
 import validationMiddleware from '../middleware/validation.middleware';
 import CreatePostDto from './post.dto';
 import Post from './post.entity';
