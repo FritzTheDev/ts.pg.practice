@@ -4,6 +4,7 @@ import { createConnection } from 'typeorm';
 
 import App from './app';
 import config from './ormconfig';
+import { PostController } from './post/post.controller';
 
 (async () => {
   try {
