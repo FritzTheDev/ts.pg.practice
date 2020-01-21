@@ -1,6 +1,6 @@
 import { cleanEnv, port, str } from 'envalid';
 
-function validateEnv() {
+export function validateEnv() {
   cleanEnv(process.env, {
     JWT_SECRET: str(),
     POSTGRES_HOST: str(),
@@ -11,5 +11,3 @@ function validateEnv() {
     PORT: port()
   });
 }
-
-export default validateEnv;
