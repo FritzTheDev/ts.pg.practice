@@ -45,7 +45,9 @@ export class PostController implements Controller {
     request: express.Request,
     response: express.Response
   ) => {
-    const posts = await this.postRespository.find();
+    const posts = await this.postRespository.find({
+      relations: ['categories']
+    });
     response.send(posts);
   };
 
@@ -55,7 +57,9 @@ export class PostController implements Controller {
     next: express.NextFunction
   ) => {
     const id = request.params.id;
-    const post = await this.postRespository.findOne(id);
+    const post = await this.postRespository.findOne(id, {
+      relations: ['categories']
+    });
     if (post) {
       response.send(post);
     } else {
