@@ -5,6 +5,7 @@ import { Controller } from '../interfaces/controller.interface';
 import { validationMiddleware } from '../middleware/validation.middleware';
 import { CreatePostDto } from './post.dto';
 import { Post } from './post.entity';
+import { RequestWithUser } from '../interfaces/RequestWithUser.interface';
 
 export class PostController implements Controller {
   public path = '/posts';
@@ -32,11 +33,14 @@ export class PostController implements Controller {
   }
 
   private createPost = async (
-    request: express.Request,
+    request: RequestWithUser,
     response: express.Response
   ) => {
     const postData: CreatePostDto = request.body;
-    const newPost = this.postRespository.create(postData);
+    const newPost = this.postRespository.create({
+      ...postData,
+      author: request.user
+    });
     await this.postRespository.save(newPost);
     response.send(newPost);
   };
