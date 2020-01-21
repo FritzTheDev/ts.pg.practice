@@ -1,7 +1,7 @@
 import * as bodyparser from 'body-parser';
 import * as express from 'express';
 import { Controller } from './interfaces/controller.interface';
-import errorMiddleware from './middleware/error.middleware';
+import { errorMiddleware } from './middleware/error.middleware';
 
 export class App {
   public app: express.Application;
