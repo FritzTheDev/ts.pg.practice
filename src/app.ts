@@ -3,7 +3,7 @@ import * as express from 'express';
 import Controller from './interfaces/controller.interface';
 import errorMiddleware from './middleware/error.middleware';
 
-export default class App {
+export class App {
   public app: express.Application;
 
   constructor(controllers: Controller[]) {
