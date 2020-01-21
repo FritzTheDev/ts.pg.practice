@@ -21,7 +21,10 @@ export class User {
   @Column()
   public password: string;
 
-  @OneToOne(() => Address)
+  @OneToOne(
+    () => Address,
+    (address: Address) => address.user
+  )
   @JoinColumn()
   public address: Address;
 }
