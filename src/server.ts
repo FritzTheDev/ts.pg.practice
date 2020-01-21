@@ -7,7 +7,7 @@ import { config } from './ormconfig';
 import { PostController } from './post/post.controller';
 import { validateEnv } from './utils/validateenv';
 
-validateenv();
+validateEnv();
 
 (async () => {
   try {
