@@ -1,5 +1,6 @@
-import * as bodyparser from 'body-parser';
+import * as bodyParser from 'body-parser';
 import * as express from 'express';
+import * as cookieParser from 'cookie-parser';
 import { Controller } from './interfaces/controller.interface';
 import { errorMiddleware } from './middleware/error.middleware';
 
@@ -21,7 +22,8 @@ export class App {
   }
 
   private initializeMiddlewares() {
-    this.app.use(bodyparser.json());
+    this.app.use(bodyParser.json());
+    this.app.use(cookieParser());
   }
 
   private initializeErrorHandling() {
